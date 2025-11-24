@@ -61,14 +61,12 @@ public class AssetManager
     public static void LoadSpriteSheets(string filename)
     {
         string json = File.ReadAllText("../../../" + filename);
-        List<SpriteSheetJson>? data = JsonConvert.DeserializeObject<List<SpriteSheetJson>>(json);
+        List<SpriteSheetData>? data = JsonConvert.DeserializeObject<List<SpriteSheetData>>(json);
 
         if (data == null) return;
 
-        foreach (SpriteSheetJson sheet in data)
+        foreach (SpriteSheetData sheet in data)
         {
-            //LoadTexture(sheet.texture_id, sheet.texture_path);
-            
             SpriteSheetProps sheetProps = new SpriteSheetProps()
             {
                 Texture = GetTexture(sheet.texture_id)!,
