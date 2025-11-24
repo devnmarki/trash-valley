@@ -42,3 +42,4 @@ E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Microsoft
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Schedulers.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Newtonsoft.Json.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\obj\Debug\net9.0\TrashValley.sourcelink.json
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\VelcroPhysics.MonoGame.dll

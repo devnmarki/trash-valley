@@ -18,6 +18,8 @@ public class Engine
 
         Content = game.Content;
         SpriteBatch = new SpriteBatch(game.GraphicsDevice);
+        
+        RenderHelper.Init(game.GraphicsDevice);
     }
 
     public static Engine Create(Game game)

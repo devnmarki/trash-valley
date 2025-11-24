@@ -8,7 +8,6 @@ namespace TrashValley;
 public class Main : Game
 {
     private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
 
     private Engine.Engine _engine;
 
@@ -28,8 +27,6 @@ public class Main : Game
 
     protected override void LoadContent()
     {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
-
         AssetManager.LoadTextures("Data/Assets/textures.json");
         AssetManager.LoadSpriteSheets("Data/Assets/spritesheets.json");
         
