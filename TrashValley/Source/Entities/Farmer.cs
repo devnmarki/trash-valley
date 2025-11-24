@@ -22,5 +22,10 @@ public class Farmer : Entity
             Size = new Vector2(16f) * transform.Scale,
             Offset = new Vector2(16f) * transform.Scale,
         });
+        AddComponent(new Rigidbody()
+        {
+            Mass = 1,
+            GravityScale = 0
+        });
     }
 }

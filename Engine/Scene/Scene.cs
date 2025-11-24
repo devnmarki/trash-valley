@@ -7,13 +7,13 @@ public abstract class Scene
     public World EntityWorld { get; set; } = World.Create();
 
     public List<System> Systems { get; set; } = [];
-
-    private PhysicsSystem _physicsSystem;
+    
+    public PhysicsSystem? PhysicsSystem { get; private set; }
 
     public virtual void OnEnter()
     {
         AddSystem(new RenderSystem());    
-        AddSystem(_physicsSystem = new PhysicsSystem());
+        AddSystem(PhysicsSystem = new PhysicsSystem());
     }
     
     public virtual void OnUpdate() { }
@@ -21,7 +21,7 @@ public abstract class Scene
 
     public virtual void OnExit()
     {
-        _physicsSystem?.Cleanup();
+        PhysicsSystem?.Cleanup();
         
         Systems.Clear();
         

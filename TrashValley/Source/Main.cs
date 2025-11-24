@@ -43,6 +43,8 @@ public class Main : Game
         
         _engine.Update(gameTime);
         
+        //SceneManager.ActiveScene?.PhysicsSystem?.SetGravity(new Vector2(0f));
+        
         if (Input.IsKeyPressed(Keys.Q))
             SceneManager.SwitchScene("default_scene");
         else if (Input.IsKeyPressed(Keys.E))
