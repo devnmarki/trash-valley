@@ -1,0 +1,720 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "Arch/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Arch.LowLevel": "1.1.5",
+          "Collections.Pooled": "2.0.0-preview.27",
+          "CommunityToolkit.HighPerformance": "8.2.2",
+          "Microsoft.Extensions.ObjectPool": "7.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "ZeroAllocJobScheduler": "1.1.2"
+        },
+        "compile": {
+          "lib/net8.0/Arch.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Arch.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Arch.LowLevel/1.1.5": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.HighPerformance": "8.2.2",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Arch.LowLevel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Arch.LowLevel.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Collections.Pooled/2.0.0-preview.27": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Collections.Pooled.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Collections.Pooled.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.HighPerformance/8.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MonoGame.Content.Builder.Task/3.8.4.1": {
+        "type": "package",
+        "build": {
+          "build/MonoGame.Content.Builder.Task.props": {},
+          "build/MonoGame.Content.Builder.Task.targets": {}
+        }
+      },
+      "MonoGame.Framework.DesktopGL/3.8.4.1": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Library.OpenAL": "1.24.3.2",
+          "MonoGame.Library.SDL": "2.32.2.1",
+          "NVorbis": "0.10.4"
+        },
+        "compile": {
+          "lib/net8.0/MonoGame.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "MonoGame.Library.OpenAL/1.24.3.2": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/android-arm/native/libopenal.so": {
+            "assetType": "native",
+            "rid": "android-arm"
+          },
+          "runtimes/android-arm64/native/libopenal.so": {
+            "assetType": "native",
+            "rid": "android-arm64"
+          },
+          "runtimes/android-x64/native/libopenal.so": {
+            "assetType": "native",
+            "rid": "android-x64"
+          },
+          "runtimes/android-x86/native/libopenal.so": {
+            "assetType": "native",
+            "rid": "android-x86"
+          },
+          "runtimes/ios-arm64/native/libopenal.a": {
+            "assetType": "native",
+            "rid": "ios-arm64"
+          },
+          "runtimes/iossimulator-arm64/native/libopenal.a": {
+            "assetType": "native",
+            "rid": "iossimulator-arm64"
+          },
+          "runtimes/iossimulator-x64/native/libopenal.a": {
+            "assetType": "native",
+            "rid": "iossimulator-x64"
+          },
+          "runtimes/linux-arm64/native/libopenal.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libopenal.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libopenal.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-x64/native/openal.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "MonoGame.Library.SDL/2.32.2.1": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libSDL2-2.0.so.0": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libSDL2-2.0.0.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-x64/native/SDL2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Nopipeline.Task/2.3.0": {
+        "type": "package",
+        "build": {
+          "build/Nopipeline.Task.targets": {}
+        }
+      },
+      "NVorbis/0.10.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NVorbis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NVorbis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "ZeroAllocJobScheduler/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Schedulers.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Schedulers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Arch": "2.1.0",
+          "MonoGame.Framework.DesktopGL": "3.8.4.1",
+          "Newtonsoft.Json": "13.0.4"
+        },
+        "compile": {
+          "bin/placeholder/Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Engine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Arch/2.1.0": {
+      "sha512": "Z9zxQztEvD/c2tsdW+LDm5E3Rd04JKeWRa6S0JOBfEFE7800+JLa7pgMAL6I/hvOY6q93QXvQ6Y+5E/TPc5Tfw==",
+      "type": "package",
+      "path": "arch/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "arch.2.1.0.nupkg.sha512",
+        "arch.nuspec",
+        "lib/net6.0/Arch.dll",
+        "lib/net6.0/Arch.xml",
+        "lib/net8.0/Arch.dll",
+        "lib/net8.0/Arch.xml",
+        "lib/netstandard2.1/Arch.dll",
+        "lib/netstandard2.1/Arch.xml"
+      ]
+    },
+    "Arch.LowLevel/1.1.5": {
+      "sha512": "kc6T2qAsgzdb5RV+RIqVQ33LROhgXmA5fZRUhXRK+AJ1J58NML1i2M6XTKIj1ISirCwuqgYnM4qYkhqGcngG1g==",
+      "type": "package",
+      "path": "arch.lowlevel/1.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "arch.lowlevel.1.1.5.nupkg.sha512",
+        "arch.lowlevel.nuspec",
+        "lib/net6.0/Arch.LowLevel.dll",
+        "lib/net6.0/Arch.LowLevel.xml",
+        "lib/net7.0/Arch.LowLevel.dll",
+        "lib/net7.0/Arch.LowLevel.xml",
+        "lib/netstandard2.1/Arch.LowLevel.dll",
+        "lib/netstandard2.1/Arch.LowLevel.xml"
+      ]
+    },
+    "Collections.Pooled/2.0.0-preview.27": {
+      "sha512": "VS3uHc1GNamanS1i1hQ3PoZUddIagCswVMWvucAgqWwY2KVwgL2Q7raGu0hTqP/CWuROoq0RiNbIvu4ST1bMzg==",
+      "type": "package",
+      "path": "collections.pooled/2.0.0-preview.27",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "collections.pooled.2.0.0-preview.27.nupkg.sha512",
+        "collections.pooled.nuspec",
+        "lib/net461/Collections.Pooled.dll",
+        "lib/net461/Collections.Pooled.xml",
+        "lib/netcoreapp3.0/Collections.Pooled.dll",
+        "lib/netcoreapp3.0/Collections.Pooled.xml",
+        "lib/netstandard2.0/Collections.Pooled.dll",
+        "lib/netstandard2.0/Collections.Pooled.xml",
+        "lib/netstandard2.1/Collections.Pooled.dll",
+        "lib/netstandard2.1/Collections.Pooled.xml"
+      ]
+    },
+    "CommunityToolkit.HighPerformance/8.2.2": {
+      "sha512": "+zIp8d3sbtYaRbM6hqDs4Ui/z34j7DcUmleruZlYLE4CVxXq+MO8XJyIs42vzeTYFX+k0Iq1dEbBUnQ4z/Gnrw==",
+      "type": "package",
+      "path": "communitytoolkit.highperformance/8.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "communitytoolkit.highperformance.8.2.2.nupkg.sha512",
+        "communitytoolkit.highperformance.nuspec",
+        "lib/net6.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net6.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net6.0/CommunityToolkit.HighPerformance.xml",
+        "lib/net7.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net7.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net7.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.xml"
+      ]
+    },
+    "Microsoft.Extensions.ObjectPool/7.0.0": {
+      "sha512": "udvKco0sAVgYGTBnHUb0tY9JQzJ/nPDiv/8PIyz69wl1AibeCDZOLVVI+6156dPfHmJH7ws5oUJRiW4ZmAvuuA==",
+      "type": "package",
+      "path": "microsoft.extensions.objectpool/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net462/Microsoft.Extensions.ObjectPool.xml",
+        "lib/net7.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net7.0/Microsoft.Extensions.ObjectPool.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
+        "microsoft.extensions.objectpool.7.0.0.nupkg.sha512",
+        "microsoft.extensions.objectpool.nuspec"
+      ]
+    },
+    "MonoGame.Content.Builder.Task/3.8.4.1": {
+      "sha512": "jf6IZXMiOhuybRaWQt//u+804yzMRGk3ZRvlBJG/0iusRwTunJsQvA6tMMJJc7gjUrY6rUkzRqwinKWXugyHfA==",
+      "type": "package",
+      "path": "monogame.content.builder.task/3.8.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/MonoGame.Content.Builder.Task.props",
+        "build/MonoGame.Content.Builder.Task.targets",
+        "monogame.content.builder.task.3.8.4.1.nupkg.sha512",
+        "monogame.content.builder.task.nuspec"
+      ]
+    },
+    "MonoGame.Framework.DesktopGL/3.8.4.1": {
+      "sha512": "YybxIIT5+Ky78E/XdkS0glyluMr2EeDZwx2LqXULAOCqiKt1+aDrjPZaqLL5qpNgBcMEHUeZJ4YjWe4TAZlWLw==",
+      "type": "package",
+      "path": "monogame.framework.desktopgl/3.8.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README-packages.md",
+        "build/MonoGame.Framework.DesktopGL.targets",
+        "lib/net8.0/MonoGame.Framework.dll",
+        "lib/net8.0/MonoGame.Framework.xml",
+        "monogame.framework.desktopgl.3.8.4.1.nupkg.sha512",
+        "monogame.framework.desktopgl.nuspec"
+      ]
+    },
+    "MonoGame.Library.OpenAL/1.24.3.2": {
+      "sha512": "nGRsXQXs+NSUC3C5w90hFQfyKdZPpBnHnyg2w+Dw/2pUH7s+CoRWTJNYbzzdJf3+aeUvfvG4rTbFvMKDDj5olA==",
+      "type": "package",
+      "path": "monogame.library.openal/1.24.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE",
+        "README.md",
+        "monogame.library.openal.1.24.3.2.nupkg.sha512",
+        "monogame.library.openal.nuspec",
+        "runtimes/android-arm/native/libopenal.so",
+        "runtimes/android-arm64/native/libopenal.so",
+        "runtimes/android-x64/native/libopenal.so",
+        "runtimes/android-x86/native/libopenal.so",
+        "runtimes/ios-arm64/native/libopenal.a",
+        "runtimes/iossimulator-arm64/native/libopenal.a",
+        "runtimes/iossimulator-x64/native/libopenal.a",
+        "runtimes/linux-arm64/native/libopenal.so",
+        "runtimes/linux-x64/native/libopenal.so",
+        "runtimes/osx/native/libopenal.dylib",
+        "runtimes/win-x64/native/openal.dll"
+      ]
+    },
+    "MonoGame.Library.SDL/2.32.2.1": {
+      "sha512": "T4E2ppGlSTC2L9US1rxtdg3qTbarRzNId31xZoumUW9cf9Nq8nRQPMu9GzvZGrhfSySf0+UWPEj1rlicps+P/w==",
+      "type": "package",
+      "path": "monogame.library.sdl/2.32.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "README.md",
+        "monogame.library.sdl.2.32.2.1.nupkg.sha512",
+        "monogame.library.sdl.nuspec",
+        "runtimes/linux-x64/native/libSDL2-2.0.so.0",
+        "runtimes/osx/native/libSDL2-2.0.0.dylib",
+        "runtimes/win-x64/native/SDL2.dll"
+      ]
+    },
+    "Newtonsoft.Json/13.0.4": {
+      "sha512": "pdgNNMai3zv51W5aq268sujXUyx7SNdE2bj1wZcWjAQrKMFZV260lbqYop1d2GM67JI1huLRwxo9ZqnfF/lC6A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.4.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Nopipeline.Task/2.3.0": {
+      "sha512": "fOIPKfrm1+/SngeBRRGCR63l4uEatKIAns4k7YeIPa/M+H20kSaY7HXHB3841vUyugmDJVROe9iC0/GOZq6Rfg==",
+      "type": "package",
+      "path": "nopipeline.task/2.3.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "build/Nopipeline.Task.targets",
+        "icon.png",
+        "nopipeline.task.2.3.0.nupkg.sha512",
+        "nopipeline.task.nuspec",
+        "tools/net8.0/any/Newtonsoft.Json.dll",
+        "tools/net8.0/any/npl.deps.json",
+        "tools/net8.0/any/npl.dll",
+        "tools/net8.0/any/npl.exe",
+        "tools/net8.0/any/npl.pdb",
+        "tools/net8.0/any/npl.runtimeconfig.json"
+      ]
+    },
+    "NVorbis/0.10.4": {
+      "sha512": "WYnil3DhQHzjCY0dM9I2B3r1vWip90AOuQd25KE4NrjPQBg0tBJFluRLm5YPnO5ZLDmwrfosY8jCQGQRmWI/Pg==",
+      "type": "package",
+      "path": "nvorbis/0.10.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net45/NVorbis.dll",
+        "lib/net45/NVorbis.xml",
+        "lib/netstandard2.0/NVorbis.dll",
+        "lib/netstandard2.0/NVorbis.xml",
+        "nvorbis.0.10.4.nupkg.sha512",
+        "nvorbis.nuspec"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "ZeroAllocJobScheduler/1.1.2": {
+      "sha512": "PKu/zSvwV1fWxt8+CEW15O9OlQ2zB9UoeAaor/aJJ0QeTKxxSjigczYLoVPKjYLAQu3ddZQd7Z3zplVTtUgigQ==",
+      "type": "package",
+      "path": "zeroallocjobscheduler/1.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/Schedulers.dll",
+        "lib/netstandard2.1/Schedulers.xml",
+        "zeroallocjobscheduler.1.1.2.nupkg.sha512",
+        "zeroallocjobscheduler.nuspec"
+      ]
+    },
+    "Engine/1.0.0": {
+      "type": "project",
+      "path": "../Engine/Engine.csproj",
+      "msbuildProject": "../Engine/Engine.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Engine >= 1.0.0",
+      "MonoGame.Content.Builder.Task >= 3.8.*",
+      "MonoGame.Framework.DesktopGL >= 3.8.*",
+      "Nopipeline.Task >= 2.3.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Korisnik\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\TrashValley\\TrashValley.csproj",
+      "projectName": "TrashValley",
+      "projectPath": "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\TrashValley\\TrashValley.csproj",
+      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+      "outputPath": "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\TrashValley\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\Engine\\Engine.csproj": {
+              "projectPath": "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\Engine\\Engine.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "MonoGame.Content.Builder.Task": {
+            "target": "Package",
+            "version": "[3.8.*, )"
+          },
+          "MonoGame.Framework.DesktopGL": {
+            "target": "Package",
+            "version": "[3.8.*, )"
+          },
+          "Nopipeline.Task": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
