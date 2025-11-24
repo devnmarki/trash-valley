@@ -41,3 +41,4 @@ E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Community
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Microsoft.Extensions.ObjectPool.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Schedulers.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\obj\Debug\net9.0\TrashValley.sourcelink.json

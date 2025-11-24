@@ -15,7 +15,7 @@ public class Farmer : Entity
         
         AddComponent(new SpriteRenderer()
         {
-            Sprite = AssetManager.GetSpriteSheet("player_spritesheet")!.GetSprite(0),
+            Sprite = AssetManager.GetSpriteSheet("player")!.GetSprite(0),
         });
     }
 }

@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using System.Text.Json.Serialization;
+using Engine.Serialization;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json;
 
 namespace Engine;
 
@@ -17,6 +21,19 @@ public class AssetManager
         
         Console.WriteLine($"Texture {id} already exists!");
         return null;
+    }
+
+    public static void LoadTextures(string filename)
+    {
+        string json = File.ReadAllText("../../../" + filename);
+        List<TextureData>? data = JsonConvert.DeserializeObject<List<TextureData>>(json);
+
+        if (data == null) return;
+
+        foreach (TextureData texture in data)
+        {
+            LoadTexture(texture.id, texture.path);
+        }
     }
 
     public static Texture2D? GetTexture(string id)
@@ -39,6 +56,29 @@ public class AssetManager
         
         Console.WriteLine($"Sprite Sheet {id} already exists!");
         return null;
+    }
+
+    public static void LoadSpriteSheets(string filename)
+    {
+        string json = File.ReadAllText("../../../" + filename);
+        List<SpriteSheetJson>? data = JsonConvert.DeserializeObject<List<SpriteSheetJson>>(json);
+
+        if (data == null) return;
+
+        foreach (SpriteSheetJson sheet in data)
+        {
+            //LoadTexture(sheet.texture_id, sheet.texture_path);
+            
+            SpriteSheetProps sheetProps = new SpriteSheetProps()
+            {
+                Texture = GetTexture(sheet.texture_id)!,
+                Columns = sheet.columns,
+                Rows = sheet.rows,
+                SpriteSize = new Vector2(sheet.sprite_width, sheet.sprite_height),
+                Flip = sheet.flip
+            };
+            LoadSpriteSheet(sheet.id, sheetProps);
+        }
     }
     
     public static SpriteSheet? GetSpriteSheet(string id)

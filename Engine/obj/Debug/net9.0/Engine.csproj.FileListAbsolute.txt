@@ -10,3 +10,4 @@ E:\Dev\Game Dev\C# - MonoGame\TrashValley\Engine\obj\Debug\net9.0\Engine.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\Engine\obj\Debug\net9.0\refint\Engine.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\Engine\obj\Debug\net9.0\Engine.pdb
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\Engine\obj\Debug\net9.0\ref\Engine.dll
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\Engine\obj\Debug\net9.0\Engine.sourcelink.json

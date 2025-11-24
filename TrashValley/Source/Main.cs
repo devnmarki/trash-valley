@@ -30,15 +30,8 @@ public class Main : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        AssetManager.LoadTexture("player_spritesheet", "Sprites/player_sheet");
-        AssetManager.LoadSpriteSheet("player_spritesheet", new SpriteSheetProps
-        {
-            Texture = AssetManager.GetTexture("player_spritesheet")!,
-            Columns = 4,
-            Rows = 9,
-            Flip = false,
-            SpriteSize = new Vector2(32)
-        });
+        AssetManager.LoadTextures("Data/Assets/textures.json");
+        AssetManager.LoadSpriteSheets("Data/Assets/spritesheets.json");
         
         SceneManager.AddScene("default_scene", new DefaultScene());
         SceneManager.AddScene("farm_scene", new FarmScene());
