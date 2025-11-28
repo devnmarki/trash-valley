@@ -10,6 +10,7 @@
       <PackageReference Include="Arch" Version="2.1.0" />
       <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+      <PackageReference Include="VelcroPhysics.MonoGame" Version="0.2.2-CI-20210406-134555" />
     </ItemGroup>
 
 </Project>

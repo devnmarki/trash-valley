@@ -8,7 +8,6 @@ namespace TrashValley;
 public class Main : Game
 {
     private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
 
     private Engine.Engine _engine;
 
@@ -28,30 +27,22 @@ public class Main : Game
 
     protected override void LoadContent()
     {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
+        InitializeInputActions();
+        LoadAssets();
+        InitializeScenes();
 
-        AssetManager.LoadTexture("player_spritesheet", "Sprites/player_sheet");
-        AssetManager.LoadSpriteSheet("player_spritesheet", new SpriteSheetProps
-        {
-            Texture = AssetManager.GetTexture("player_spritesheet")!,
-            Columns = 4,
-            Rows = 9,
-            Flip = false,
-            SpriteSize = new Vector2(32)
-        });
-        
-        SceneManager.AddScene("default_scene", new DefaultScene());
-        SceneManager.AddScene("farm_scene", new FarmScene());
-        SceneManager.SwitchScene("default_scene");
+        Engine.Engine.Instance.DebugMode = true;
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-            Keyboard.GetState().IsKeyDown(Keys.Escape))
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
         _engine.Update(gameTime);
+
+        if (Input.IsKeyPressed(Keys.Tab))
+            Engine.Engine.Instance.DebugMode = !Engine.Engine.Instance.DebugMode;
         
         if (Input.IsKeyPressed(Keys.Q))
             SceneManager.SwitchScene("default_scene");
@@ -68,5 +59,26 @@ public class Main : Game
         _engine.Render();
         
         base.Draw(gameTime);
+    }
+
+    private static void InitializeInputActions()
+    {
+        Input.AddAction(new InputAction("move_up", [Keys.W, Keys.Up]));
+        Input.AddAction(new InputAction("move_down", [Keys.S, Keys.Down]));
+        Input.AddAction(new InputAction("move_left", [Keys.A, Keys.Left]));
+        Input.AddAction(new InputAction("move_right", [Keys.D, Keys.Right]));
+    }
+
+    private static void LoadAssets()
+    {
+        AssetManager.LoadTextures("Data/Assets/textures.json");
+        AssetManager.LoadSpriteSheets("Data/Assets/spritesheets.json");
+    }
+
+    private static void InitializeScenes()
+    {
+        SceneManager.AddScene("default_scene", new DefaultScene());
+        SceneManager.AddScene("farm_scene", new FarmScene());
+        SceneManager.SwitchScene("default_scene");
     }
 }

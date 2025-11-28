@@ -7,15 +7,27 @@ public abstract class Scene
     public World EntityWorld { get; set; } = World.Create();
 
     public List<System> Systems { get; set; } = [];
+    
+    public PhysicsSystem? PhysicsSystem { get; private set; }
 
     public virtual void OnEnter()
     {
         AddSystem(new RenderSystem());    
+        AddSystem(PhysicsSystem = new PhysicsSystem());
     }
     
     public virtual void OnUpdate() { }
     public virtual void OnRender() { }
-    public virtual void OnExit() { }
+
+    public virtual void OnExit()
+    {
+        PhysicsSystem?.Cleanup();
+        
+        Systems.Clear();
+        
+        EntityWorld.Dispose();
+        EntityWorld = World.Create();
+    }
 
     public Entity AddEntity<T>(params object[] args) where T : Entity
     {

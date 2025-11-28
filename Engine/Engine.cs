@@ -9,9 +9,10 @@ public class Engine
     public static Engine Instance { get; private set; } = null!;
 
     public Game Game { get; private set; }
-    
     public ContentManager Content { get; private set; }
     public SpriteBatch SpriteBatch { get; private set; }
+
+    public bool DebugMode { get; set; } = false;
     
     private Engine(Game game)
     {
@@ -19,6 +20,8 @@ public class Engine
 
         Content = game.Content;
         SpriteBatch = new SpriteBatch(game.GraphicsDevice);
+        
+        RenderHelper.Init(game.GraphicsDevice);
     }
 
     public static Engine Create(Game game)
@@ -42,7 +45,7 @@ public class Engine
 
     public void Render()
     {
-        SpriteBatch.Begin(sortMode: SpriteSortMode.Deferred, samplerState: SamplerState.PointWrap);
+        SpriteBatch.Begin(sortMode: SpriteSortMode.BackToFront, samplerState: SamplerState.PointWrap);
         SceneManager.RenderActiveScene();
         SpriteBatch.End();
     }

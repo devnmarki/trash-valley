@@ -230,6 +230,15 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "VelcroPhysics.MonoGame/0.2.2-CI-20210406-134555": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/VelcroPhysics.MonoGame.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/VelcroPhysics.MonoGame.dll": {}
+        }
+      },
       "ZeroAllocJobScheduler/1.1.2": {
         "type": "package",
         "compile": {
@@ -540,6 +549,18 @@
         "version.txt"
       ]
     },
+    "VelcroPhysics.MonoGame/0.2.2-CI-20210406-134555": {
+      "sha512": "0YqUJUwYi/upsokkVn73uAPEJL+2ghGnQZuBWYCHs2NVcyz2KmmuOgfcMaMcSCf6g2Tkm+ZbRGHBWkES9eW/XA==",
+      "type": "package",
+      "path": "velcrophysics.monogame/0.2.2-ci-20210406-134555",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/VelcroPhysics.MonoGame.dll",
+        "velcrophysics.monogame.0.2.2-ci-20210406-134555.nupkg.sha512",
+        "velcrophysics.monogame.nuspec"
+      ]
+    },
     "ZeroAllocJobScheduler/1.1.2": {
       "sha512": "PKu/zSvwV1fWxt8+CEW15O9OlQ2zB9UoeAaor/aJJ0QeTKxxSjigczYLoVPKjYLAQu3ddZQd7Z3zplVTtUgigQ==",
       "type": "package",
@@ -558,7 +579,8 @@
     "net9.0": [
       "Arch >= 2.1.0",
       "MonoGame.Framework.DesktopGL >= 3.8.4.1",
-      "Newtonsoft.Json >= 13.0.4"
+      "Newtonsoft.Json >= 13.0.4",
+      "VelcroPhysics.MonoGame >= 0.2.2-CI-20210406-134555"
     ]
   },
   "packageFolders": {
@@ -622,6 +644,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.4, )"
+          },
+          "VelcroPhysics.MonoGame": {
+            "target": "Package",
+            "version": "[0.2.2-CI-20210406-134555, )"
           }
         },
         "imports": [

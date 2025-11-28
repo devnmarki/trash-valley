@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7h71mcZF87c=",
+  "dgSpecHash": "o4H46pqifHs=",
   "success": true,
   "projectFilePath": "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\Engine\\Engine.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\Korisnik\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Korisnik\\.nuget\\packages\\velcrophysics.monogame\\0.2.2-ci-20210406-134555\\velcrophysics.monogame.0.2.2-ci-20210406-134555.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\zeroallocjobscheduler\\1.1.2\\zeroallocjobscheduler.1.1.2.nupkg.sha512"
   ],
   "logs": []

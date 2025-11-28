@@ -26,13 +26,7 @@ public class SceneManager
 
         if (ActiveScene != newScene)
         {
-            if (ActiveScene != null)
-            {
-                ActiveScene.OnExit();
-                ActiveScene.EntityWorld.Dispose();
-                World.Destroy(ActiveScene.EntityWorld);
-            }
-            
+            ActiveScene?.OnExit();
             ActiveScene = newScene;
             ActiveScene?.OnEnter();
         }
