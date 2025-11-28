@@ -14,7 +14,7 @@ public class DefaultScene : Scene
         AddSystem(new MovementSystem());
         AddSystem(new PlayerControllerSystem());
         
-        AddEntity<Player>();
+        AddEntity<PlayerEntity>();
     }
 
     public override void OnUpdate()

@@ -2,5 +2,5 @@
 
 public struct PlayerComponent
 {
-    
+    public Direction Direction;
 }

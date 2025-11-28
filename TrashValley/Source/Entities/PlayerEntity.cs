@@ -5,9 +5,9 @@ using Entity = Engine.Entity;
 
 namespace TrashValley;
 
-public class Player : Entity
+public class PlayerEntity : Entity
 {
-    public Player(World world, Arch.Core.Entity id) : base(world, id)
+    public PlayerEntity(World world, Arch.Core.Entity id) : base(world, id)
     {
         ref var transform = ref GetComponent<Transform>();
         transform.Position = new Vector2(128);
@@ -38,7 +38,10 @@ public class Player : Entity
             Velocity = new Vector2(0, 0),
             MoveSpeed = 400
         });
-        AddComponent(new PlayerComponent());
+        AddComponent(new PlayerComponent()
+        {
+            Direction = Direction.Down
+        });
     }
     
     private void LoadAnimations()
