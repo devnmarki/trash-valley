@@ -5,9 +5,9 @@ using Entity = Engine.Entity;
 
 namespace TrashValley;
 
-public class Farmer : Entity
+public class Player : Entity
 {
-    public Farmer(World world, Arch.Core.Entity id) : base(world, id)
+    public Player(World world, Arch.Core.Entity id) : base(world, id)
     {
         ref var transform = ref GetComponent<Transform>();
         transform.Position = new Vector2(128);
@@ -26,5 +26,11 @@ public class Farmer : Entity
             Mass = 1,
             GravityScale = 0
         });
+        AddComponent(new MovementComponent()
+        {
+            Velocity = new Vector2(0, 0),
+            MoveSpeed = 400
+        });
+        AddComponent(new PlayerComponent());
     }
 }

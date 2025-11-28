@@ -27,12 +27,9 @@ public class Main : Game
 
     protected override void LoadContent()
     {
-        AssetManager.LoadTextures("Data/Assets/textures.json");
-        AssetManager.LoadSpriteSheets("Data/Assets/spritesheets.json");
-        
-        SceneManager.AddScene("default_scene", new DefaultScene());
-        SceneManager.AddScene("farm_scene", new FarmScene());
-        SceneManager.SwitchScene("default_scene");
+        InitializeInputActions();
+        LoadAssets();
+        InitializeScenes();
 
         Engine.Engine.Instance.DebugMode = true;
     }
@@ -62,5 +59,26 @@ public class Main : Game
         _engine.Render();
         
         base.Draw(gameTime);
+    }
+
+    private static void InitializeInputActions()
+    {
+        Input.AddAction(new InputAction("move_up", [Keys.W, Keys.Up]));
+        Input.AddAction(new InputAction("move_down", [Keys.S, Keys.Down]));
+        Input.AddAction(new InputAction("move_left", [Keys.A, Keys.Left]));
+        Input.AddAction(new InputAction("move_right", [Keys.D, Keys.Right]));
+    }
+
+    private static void LoadAssets()
+    {
+        AssetManager.LoadTextures("Data/Assets/textures.json");
+        AssetManager.LoadSpriteSheets("Data/Assets/spritesheets.json");
+    }
+
+    private static void InitializeScenes()
+    {
+        SceneManager.AddScene("default_scene", new DefaultScene());
+        SceneManager.AddScene("farm_scene", new FarmScene());
+        SceneManager.SwitchScene("default_scene");
     }
 }

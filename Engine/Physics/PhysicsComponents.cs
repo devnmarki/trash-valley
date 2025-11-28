@@ -27,7 +27,7 @@ public struct Rigidbody
 {
     public float Mass;
     public float GravityScale;
-    public Vector2? Velocity;
+    public Vector2 Velocity;
     
     public ICollider? Collider;
     
@@ -35,7 +35,7 @@ public struct Rigidbody
     {
         Mass = mass;
         GravityScale = gravityScale;
-        Velocity = null;
+        Velocity = Vector2.Zero;
         Collider = null;
     }
 }

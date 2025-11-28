@@ -11,7 +11,10 @@ public class DefaultScene : Scene
         
         Console.WriteLine("Entered default scene!");
         
-        AddEntity<Farmer>();
+        AddSystem(new MovementSystem());
+        AddSystem(new PlayerControllerSystem());
+        
+        AddEntity<Player>();
     }
 
     public override void OnUpdate()

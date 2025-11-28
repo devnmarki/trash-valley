@@ -18,6 +18,7 @@ public class PhysicsSystem : System
     public override void Update()
     {
         GenerateBodies();
+        ApplyVelocities();
         
         _physicsWorld?.Step(Time.DeltaTime);
         
@@ -58,6 +59,23 @@ public class PhysicsSystem : System
         collider.Body = body;
     }
 
+    private void ApplyVelocities()
+    {
+        EntityQuery()
+            .QueryAll<Transform, Rigidbody, BoxCollider>()
+            .ForEach((Entity entity, ref Transform t, ref Rigidbody rb, ref BoxCollider c) =>
+            {
+                rb.Collider ??= c;
+
+                if (c.Body != null)
+                {
+                    c.Body.Mass = rb.Mass;
+                    c.Body.GravityScale = rb.GravityScale;
+                    c.Body.LinearVelocity = rb.Velocity;
+                }
+            });
+    }
+
     private void SyncTransforms()
     {
         EntityQuery()
@@ -82,18 +100,8 @@ public class PhysicsSystem : System
 
                 if (bc.Body == null) return;
                 
-                if (rb.GravityScale > 0f)
-                {
-                    t.Position = PhysicsUtils.ToPixels(bc.Body.Position) - bc.Offset;
-                    t.Rotation = bc.Body.Rotation;
-                }
-                else
-                {
-                    bc.Body.Position = PhysicsUtils.ToMeters(t.Position + bc.Offset);
-                    bc.Body.Rotation = t.Rotation;
-                    bc.Body.LinearVelocity = Vector2.Zero;
-                    bc.Body.AngularVelocity = 0f;
-                }
+                t.Position = PhysicsUtils.ToPixels(bc.Body.Position) - bc.Offset;
+                t.Rotation = bc.Body.Rotation;
             });
     }
 
