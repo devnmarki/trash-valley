@@ -80,6 +80,12 @@ public class EntityQuery
         return this;
     }
 
+    public EntityQuery Exclude<T>()
+    {
+        _query = _query.WithNone<T>();
+        return this;
+    }
+
     public void ForEach(EntityAction action)
     {
         _world.Query(in _query, archEntity =>
