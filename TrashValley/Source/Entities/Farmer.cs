@@ -10,7 +10,7 @@ public class Farmer : Entity
     public Farmer(World world, Arch.Core.Entity id) : base(world, id)
     {
         ref var transform = ref GetComponent<Transform>();
-        transform.Position = new Vector2(200);
+        transform.Position = new Vector2(128);
         transform.Scale = new Vector2(3);
         
         AddComponent(new SpriteRenderer()
@@ -19,8 +19,7 @@ public class Farmer : Entity
         });
         AddComponent(new BoxCollider()
         {
-            Size = new Vector2(16f) * transform.Scale,
-            Offset = new Vector2(16f) * transform.Scale,
+            Size = new Vector2(16f) * transform.Scale
         });
         AddComponent(new Rigidbody()
         {

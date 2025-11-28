@@ -33,17 +33,19 @@ public class Main : Game
         SceneManager.AddScene("default_scene", new DefaultScene());
         SceneManager.AddScene("farm_scene", new FarmScene());
         SceneManager.SwitchScene("default_scene");
+
+        Engine.Engine.Instance.DebugMode = true;
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-            Keyboard.GetState().IsKeyDown(Keys.Escape))
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
         _engine.Update(gameTime);
-        
-        //SceneManager.ActiveScene?.PhysicsSystem?.SetGravity(new Vector2(0f));
+
+        if (Input.IsKeyPressed(Keys.Tab))
+            Engine.Engine.Instance.DebugMode = !Engine.Engine.Instance.DebugMode;
         
         if (Input.IsKeyPressed(Keys.Q))
             SceneManager.SwitchScene("default_scene");

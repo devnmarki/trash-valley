@@ -99,6 +99,9 @@ public class PhysicsSystem : System
 
     public override void Render()
     {
+        if (!Engine.Instance.DebugMode)
+            return;
+        
         EntityQuery()
             .QueryAll<Transform, BoxCollider>()
             .ForEach((Entity entity, ref Transform t, ref BoxCollider bc) =>

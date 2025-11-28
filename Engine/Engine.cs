@@ -11,6 +11,8 @@ public class Engine
     public Game Game { get; private set; }
     public ContentManager Content { get; private set; }
     public SpriteBatch SpriteBatch { get; private set; }
+
+    public bool DebugMode { get; set; } = false;
     
     private Engine(Game game)
     {
