@@ -1,5 +1,6 @@
 ﻿using System;
 using Engine;
+using Microsoft.Xna.Framework;
 
 namespace TrashValley;
 
@@ -14,7 +15,7 @@ public class DefaultScene : Scene
         AddSystem(new MovementSystem());
         AddSystem(new PlayerControllerSystem());
         
-        AddEntity<Player>();
+        AddEntity<PlayerEntity>();
     }
 
     public override void OnUpdate()

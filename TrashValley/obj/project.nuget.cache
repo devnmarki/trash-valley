@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6D8pWTj9BnM=",
+  "dgSpecHash": "IgMyoRXrd30=",
   "success": true,
   "projectFilePath": "E:\\Dev\\Game Dev\\C# - MonoGame\\TrashValley\\TrashValley\\TrashValley.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Korisnik\\.nuget\\packages\\communitytoolkit.highperformance\\8.2.2\\communitytoolkit.highperformance.8.2.2.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\microsoft.extensions.objectpool\\7.0.0\\microsoft.extensions.objectpool.7.0.0.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\monogame.content.builder.task\\3.8.4.1\\monogame.content.builder.task.3.8.4.1.nupkg.sha512",
+    "C:\\Users\\Korisnik\\.nuget\\packages\\monogame.extended\\5.3.1\\monogame.extended.5.3.1.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.4.1\\monogame.framework.desktopgl.3.8.4.1.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\monogame.library.openal\\1.24.3.2\\monogame.library.openal.1.24.3.2.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\monogame.library.sdl\\2.32.2.1\\monogame.library.sdl.2.32.2.1.nupkg.sha512",

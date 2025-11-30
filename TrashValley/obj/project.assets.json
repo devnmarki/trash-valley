@@ -86,6 +86,19 @@
           "build/MonoGame.Content.Builder.Task.targets": {}
         }
       },
+      "MonoGame.Extended/5.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Extended.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Extended.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MonoGame.Framework.DesktopGL/3.8.4.1": {
         "type": "package",
         "dependencies": {
@@ -270,6 +283,7 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Arch": "2.1.0",
+          "MonoGame.Extended": "5.3.1",
           "MonoGame.Framework.DesktopGL": "3.8.4.1",
           "Newtonsoft.Json": "13.0.4",
           "VelcroPhysics.MonoGame": "0.2.2-CI-20210406-134555"
@@ -396,6 +410,21 @@
         "build/MonoGame.Content.Builder.Task.targets",
         "monogame.content.builder.task.3.8.4.1.nupkg.sha512",
         "monogame.content.builder.task.nuspec"
+      ]
+    },
+    "MonoGame.Extended/5.3.1": {
+      "sha512": "/61Jvhpr9fogQEma3/DWrxMEt5SGsq5H48WrISi2e2lb9J4j+xF6DOl+MkMxZcDHiVVN/noOfyTTirdqCGbm3g==",
+      "type": "package",
+      "path": "monogame.extended/5.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/MonoGame.Extended.dll",
+        "lib/net8.0/MonoGame.Extended.xml",
+        "logo-nuget-128.png",
+        "monogame.extended.5.3.1.nupkg.sha512",
+        "monogame.extended.nuspec"
       ]
     },
     "MonoGame.Framework.DesktopGL/3.8.4.1": {
