@@ -1,17 +1,20 @@
 ﻿using Arch.Core;
+using MonoGame.Extended;
 
 namespace Engine;
 
 public abstract class Scene
 {
     public World EntityWorld { get; set; } = World.Create();
-
     public List<System> Systems { get; set; } = [];
-    
     public PhysicsSystem? PhysicsSystem { get; private set; }
 
+    public OrthographicCamera? SceneCamera { get; set; }
+    
     public virtual void OnEnter()
     {
+        SceneCamera = new OrthographicCamera(Engine.Instance.ViewportAdapter);
+        
         AddSystem(new RenderSystem());    
         AddSystem(PhysicsSystem = new PhysicsSystem());
     }

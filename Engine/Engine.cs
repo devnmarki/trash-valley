@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
+using MonoGame.Extended.ViewportAdapters;
 
 namespace Engine;
 
@@ -11,8 +13,9 @@ public class Engine
     public Game Game { get; private set; }
     public ContentManager Content { get; private set; }
     public SpriteBatch SpriteBatch { get; private set; }
-
+    
     public bool DebugMode { get; set; } = false;
+    public BoxingViewportAdapter ViewportAdapter { get; set; }
     
     private Engine(Game game)
     {
@@ -20,6 +23,8 @@ public class Engine
 
         Content = game.Content;
         SpriteBatch = new SpriteBatch(game.GraphicsDevice);
+
+        ViewportAdapter = new BoxingViewportAdapter(game.Window, game.GraphicsDevice, 1280, 720);
         
         RenderHelper.Init(game.GraphicsDevice);
     }
@@ -45,7 +50,8 @@ public class Engine
 
     public void Render()
     {
-        SpriteBatch.Begin(sortMode: SpriteSortMode.BackToFront, samplerState: SamplerState.PointWrap);
+        OrthographicCamera? camera = SceneManager.ActiveScene?.SceneCamera;
+        SpriteBatch.Begin(sortMode: SpriteSortMode.BackToFront, samplerState: SamplerState.PointWrap, transformMatrix: camera?.GetViewMatrix());
         SceneManager.RenderActiveScene();
         SpriteBatch.End();
     }
