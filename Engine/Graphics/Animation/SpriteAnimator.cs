@@ -1,4 +1,6 @@
-﻿namespace Engine;
+﻿using Newtonsoft.Json;
+
+namespace Engine;
 
 public struct SpriteAnimator
 {
@@ -19,6 +21,24 @@ public struct SpriteAnimator
             Console.WriteLine($"Animation {animationId} already exists!");
     }
 
+    public void LoadAnimations(string filename)
+    {
+        string json = File.ReadAllText("../../../" + filename);
+        AnimationConfig config = JsonConvert.DeserializeObject<AnimationConfig>(json);
+        SpriteSheet? spriteSheet = AssetManager.GetSpriteSheet(config.SpriteSheetId);
+
+        if (spriteSheet == null)
+        {
+            Console.WriteLine($"Unknown sprite sheet id: {config.SpriteSheetId}");
+            return;
+        }
+        
+        foreach (var (id, data) in config.Animations)
+        {
+            AddAnimation(id, new SpriteAnimation(spriteSheet, data.Frames.ToArray(), data.FrameDuration, data.Flip, data.Loop));
+        }
+    }
+
     public void PlayAnimation(string animationId)
     {
         bool exists = Animations.TryGetValue(animationId, out var animation);
@@ -32,6 +52,7 @@ public struct SpriteAnimator
         if (animation != null && CurrentAnimation != animation)
         {
             CurrentAnimation = animation;
+            CurrentAnimation.Reset();
         }
     }
 }

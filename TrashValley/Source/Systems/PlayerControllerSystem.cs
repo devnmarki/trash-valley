@@ -24,6 +24,8 @@ public class PlayerControllerSystem : Engine.System
             .ForEach((Entity entity, ref PlayerComponent player, ref MovementComponent movement) =>
             {
                 movement.Velocity = Input.GetVector("move_left", "move_right", "move_up", "move_down");
+
+                player.AnimationState = movement.Velocity == Vector2.Zero ? PlayerState.Idle : PlayerState.Move;
                 
                 if (movement.Velocity.Length() == 0)
                     return;
@@ -41,7 +43,10 @@ public class PlayerControllerSystem : Engine.System
             .QueryAll<PlayerComponent, SpriteAnimator>()
             .ForEach((Entity entity, ref PlayerComponent player, ref SpriteAnimator animator) =>
             {
-                animator.PlayAnimation("idle" + "_" + player.Direction.ToString().ToLower());
+                string animationDir = player.Direction.ToString().ToLower();
+                string animationState = player.AnimationState.ToString().ToLower();
+                
+                animator.PlayAnimation(animationState + "_" + animationDir);
             });
     }
 }

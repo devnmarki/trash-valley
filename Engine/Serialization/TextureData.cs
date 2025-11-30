@@ -1,4 +1,4 @@
-﻿namespace Engine.Serialization;
+﻿namespace Engine;
 
 public struct TextureData
 {

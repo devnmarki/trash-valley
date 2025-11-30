@@ -7,6 +7,8 @@ namespace TrashValley;
 
 public class PlayerEntity : Entity
 {
+    private const float MoveSpeed = 550f;
+    
     public PlayerEntity(World world, Arch.Core.Entity id) : base(world, id)
     {
         ref var transform = ref GetComponent<Transform>();
@@ -23,6 +25,7 @@ public class PlayerEntity : Entity
         {
             Sprite = AssetManager.GetSpriteSheet("player")!.GetSprite(0),
         });
+        AddComponent(new SpriteAnimator());
         AddComponent(new BoxCollider()
         {
             Size = new Vector2(16f) * transform.Scale
@@ -32,11 +35,10 @@ public class PlayerEntity : Entity
             Mass = 1,
             GravityScale = 0
         });
-        AddComponent(new SpriteAnimator());
         AddComponent(new MovementComponent()
         {
             Velocity = new Vector2(0, 0),
-            MoveSpeed = 400
+            MoveSpeed = MoveSpeed
         });
         AddComponent(new PlayerComponent()
         {
@@ -52,11 +54,7 @@ public class PlayerEntity : Entity
         if (sheet == null)
             return;
         
-        animator.AddAnimation("idle_down", new SpriteAnimation(sheet, [0, 1, 2], 0.2f));
-        animator.AddAnimation("idle_up", new SpriteAnimation(sheet, [4, 5, 6], 0.2f));
-        animator.AddAnimation("idle_right", new SpriteAnimation(sheet, [8, 9, 10], 0.2f));
-        animator.AddAnimation("idle_left", new SpriteAnimation(sheet, [8, 9, 10], 0.2f, true));
-        
+        animator.LoadAnimations("Data/Assets/Animations/player_animations.json");
         animator.PlayAnimation("idle_down");
     }
 }
