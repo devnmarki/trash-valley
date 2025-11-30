@@ -3,5 +3,6 @@
 public enum PlayerState
 {
     Idle,
-    Move
+    Move,
+    Action
 }

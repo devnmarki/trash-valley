@@ -3,7 +3,7 @@
 public struct PlayerComponent
 {
     public Direction Direction;
-    public PlayerState AnimationState = PlayerState.Idle;
+    public PlayerState State = PlayerState.Idle;
 
     public PlayerComponent() { }
 }

@@ -65,10 +65,12 @@ public class Main : Game
 
     private static void InitializeInputActions()
     {
-        Input.AddAction(new InputAction("move_up", [Keys.W, Keys.Up]));
-        Input.AddAction(new InputAction("move_down", [Keys.S, Keys.Down]));
-        Input.AddAction(new InputAction("move_left", [Keys.A, Keys.Left]));
-        Input.AddAction(new InputAction("move_right", [Keys.D, Keys.Right]));
+        Input.AddAction(new InputAction("move_up", keys: [Keys.W, Keys.Up]));
+        Input.AddAction(new InputAction("move_down", keys: [Keys.S, Keys.Down]));
+        Input.AddAction(new InputAction("move_left", keys: [Keys.A, Keys.Left]));
+        Input.AddAction(new InputAction("move_right", keys: [Keys.D, Keys.Right]));
+        
+        Input.AddAction(new InputAction("action", keys: [Keys.Space], buttons: [MouseButtons.Left]));
     }
 
     private static void LoadAssets()
