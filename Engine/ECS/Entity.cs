@@ -7,14 +7,15 @@ public class Entity
     private readonly World _world;
     private readonly Arch.Core.Entity _id;
 
-    public Transform Transform { get; set; }
+    public ref Transform Transform => ref _world.Get<Transform>(_id);
 
     public Entity(World world, Arch.Core.Entity id)
     {
         _world = world;
         _id = id;
-        
-        Transform = AddComponent<Transform>();
+
+        if (!_world.Has<Transform>(_id))
+            _world.Add<Transform>(_id);
     }
 
     public T AddComponent<T>(T component)

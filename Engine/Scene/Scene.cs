@@ -47,6 +47,7 @@ public abstract class Scene
     public void AddSystem(System system)
     {
         Systems.Add(system);
+        system.Start();
     }
 
     public void RemoveSystem(System system)

@@ -5,7 +5,12 @@ namespace Engine;
 
 public struct Sprite
 {
-    public Texture2D? Texture { get; set; }
-    public Rectangle? SourceRectangle { get; set; }
-    public bool Flip { get; set; }
+    public Texture2D? Texture = null;
+    public Rectangle? SourceRectangle = null;
+    public bool Flip = false;
+
+    public Sprite()
+    {
+        
+    }
 }

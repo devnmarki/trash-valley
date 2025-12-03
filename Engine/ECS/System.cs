@@ -2,8 +2,9 @@
 
 public abstract class System
 {
-    public abstract void Update();
-    public abstract void Render();
+    public virtual void Start() { }
+    public virtual void Update() { }
+    public virtual void Render() { }
 
     protected EntityQuery EntityQuery()
     {

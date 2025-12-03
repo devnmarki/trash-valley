@@ -13,7 +13,7 @@ public class PlayerEntity : Entity
     {
         ref var transform = ref GetComponent<Transform>();
         transform.Position = new Vector2(128);
-        transform.Scale = new Vector2(3);
+        transform.Scale = new Vector2(Constants.ScaleFactor);
         
         InitializeComponents(transform);
         LoadAnimations();

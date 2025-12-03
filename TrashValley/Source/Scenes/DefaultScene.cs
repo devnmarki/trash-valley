@@ -12,10 +12,10 @@ public class DefaultScene : Scene
         
         Console.WriteLine("Entered default scene!");
         
+        AddEntity<PlayerEntity>();
+        
         AddSystem(new MovementSystem());
         AddSystem(new PlayerControllerSystem());
-        
-        AddEntity<PlayerEntity>();
     }
 
     public override void OnUpdate()

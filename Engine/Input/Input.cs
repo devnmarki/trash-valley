@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using MonoGame.Extended;
 
 namespace Engine;
 
@@ -104,5 +105,15 @@ public class Input
         vector.X = GetAxis(negativeX, positiveX);
         vector.Y = GetAxis(negativeY, positiveY);
         return vector;
-    } 
+    }
+
+    public static Vector2 GetMouseWorldPosition(OrthographicCamera camera)
+    {
+        return camera.ScreenToWorld(_currentMouseState.Position.ToVector2());
+    }
+
+    public static Vector2 GetMouseScreenPosition()
+    {
+        return _currentMouseState.Position.ToVector2();
+    }
 }
