@@ -44,3 +44,7 @@ E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Newtonsof
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\obj\Debug\net9.0\TrashValley.sourcelink.json
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\VelcroPhysics.MonoGame.dll
 E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\MonoGame.Extended.dll
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Content\Sprites\GameObjects\Resources\rock.xnb
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Content\Sprites\GameObjects\Resources\tree.xnb
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Content\Sprites\GameObjects\soil.xnb
+E:\Dev\Game Dev\C# - MonoGame\TrashValley\TrashValley\bin\Debug\net9.0\Content\Sprites\GameObjects\Tools\axe.xnb

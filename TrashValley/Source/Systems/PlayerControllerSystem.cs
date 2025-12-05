@@ -14,11 +14,6 @@ public class PlayerControllerSystem : Engine.System
     private float _currentActionTime = 0f;
     private Vector2 _hitboxPosition = Vector2.Zero;
 
-    public override void Start()
-    {
-        base.Start();
-    }
-
     public override void Update()
     {
         base.Update();
@@ -99,13 +94,16 @@ public class PlayerControllerSystem : Engine.System
                 if (Input.IsActionPressed("action"))
                 {
                     player.State = PlayerState.Action;
+                    
+                    UpdateFacingDirectionDuringAction(entity, ref player);
+                    
                     _currentActionTime = ActionDuration;
                     return;
                 }
                 
                 player.State = IsMoving(movement) ? PlayerState.Move : PlayerState.Idle;
                 
-                UpdateFacingDirection(ref player, movement);
+                UpdateFacingDirection(entity, ref player, movement);
             });
     }
 
@@ -118,7 +116,7 @@ public class PlayerControllerSystem : Engine.System
             player.State = PlayerState.Idle;
     }
 
-    private void UpdateFacingDirection(ref PlayerComponent player, MovementComponent movement)
+    private void UpdateFacingDirection(Entity playerEntity, ref PlayerComponent player, MovementComponent movement)
     {
         if (movement.Velocity.Length() == 0)
             return;
@@ -127,6 +125,19 @@ public class PlayerControllerSystem : Engine.System
             player.Direction = movement.Velocity.Y > 0 ? Direction.Down : Direction.Up;
         else
             player.Direction = movement.Velocity.X > 0 ? Direction.Right : Direction.Left;
+    }
+
+    private void UpdateFacingDirectionDuringAction(Entity playerEntity, ref PlayerComponent player)
+    {
+        Vector2 playerPos = playerEntity.Transform.Position;
+        if (!InPlayerRange(playerPos, _hitboxPosition)) 
+            return;
+            
+        Vector2 diff = _hitboxPosition - playerPos;
+        if (Math.Abs(diff.X) > Math.Abs(diff.Y))
+            player.Direction = diff.X < 0 ? Direction.Left : Direction.Right;
+        else
+            player.Direction = diff.Y < 0 ? Direction.Up : Direction.Down;
     }
 
     private void UpdateSpriteAnimation()
@@ -154,10 +165,10 @@ public class PlayerControllerSystem : Engine.System
 
     private bool InPlayerRange(Vector2 playerPosition, Vector2 currentPosition)
     {
-        float tileSize = Constants.TileSizeS;
+        const float tileSize = Constants.TileSizeS;
         return !(currentPosition.X > playerPosition.X + tileSize || 
-               currentPosition.X < playerPosition.X - tileSize * 2 || 
-               currentPosition.Y > playerPosition.Y + tileSize ||
-               currentPosition.Y < playerPosition.Y - tileSize * 2);
+                 currentPosition.X < playerPosition.X - tileSize * 2 || 
+                 currentPosition.Y > playerPosition.Y + tileSize ||
+                 currentPosition.Y < playerPosition.Y - tileSize * 2);
     }
 }

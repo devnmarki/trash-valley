@@ -2,5 +2,21 @@
   {
     "id": "player_sheet",
     "path": "Sprites/player_sheet"
+  },
+  {
+    "id": "axe_sheet",
+    "path": "Sprites/GameObjects/Tools/axe"
+  },
+  {
+    "id": "rock_resource",
+    "path": "Sprites/GameObjects/Resources/rock"
+  },
+  {
+    "id": "tree_resource",
+    "path": "Sprites/GameObjects/Resources/tree"
+  },
+  {
+    "id": "soil_sheet",
+    "path": "Sprites/GameObjects/soil"
   }
 ]

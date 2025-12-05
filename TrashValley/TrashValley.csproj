@@ -29,7 +29,6 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Content\Sprites\" />
-      <Folder Include="Content\Sprites\Objects\" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Engine\Engine.csproj" />

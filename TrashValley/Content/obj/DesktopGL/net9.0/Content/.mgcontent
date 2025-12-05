@@ -5,8 +5,16 @@
   <Config />
   <SourceFiles>
     <File>E:/Dev/Game Dev/C# - MonoGame/TrashValley/TrashValley/Content/Sprites/player_sheet.png</File>
+    <File>E:/Dev/Game Dev/C# - MonoGame/TrashValley/TrashValley/Content/Sprites/GameObjects/soil.png</File>
+    <File>E:/Dev/Game Dev/C# - MonoGame/TrashValley/TrashValley/Content/Sprites/GameObjects/Resources/rock.png</File>
+    <File>E:/Dev/Game Dev/C# - MonoGame/TrashValley/TrashValley/Content/Sprites/GameObjects/Resources/tree.png</File>
+    <File>E:/Dev/Game Dev/C# - MonoGame/TrashValley/TrashValley/Content/Sprites/GameObjects/Tools/axe.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
