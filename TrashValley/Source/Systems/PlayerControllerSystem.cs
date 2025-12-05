@@ -41,30 +41,12 @@ public class PlayerControllerSystem : Engine.System
             .QueryAll<PlayerComponent>()
             .ForEach((Entity entity, ref PlayerComponent player) =>
             {
+                Vector2 mousePosition = Input.GetMouseScreenPosition();
                 float tileSize = Constants.TileSizeS;
-                Vector2 hitboxOffset = Vector2.Zero;
-                
-                switch (player.Direction)
-                {
-                    case Direction.Up:
-                        hitboxOffset.Y = -tileSize;
-                        break;
-                    case Direction.Down:
-                        hitboxOffset.Y = tileSize;
-                        break;
-                    case Direction.Left:
-                        hitboxOffset.X = -tileSize;
-                        break;
-                    case Direction.Right:
-                        hitboxOffset.X = tileSize;
-                        break;
-                }
-                
-                Vector2 targetPosition = entity.GetComponent<Transform>().Position + hitboxOffset;
 
                 _hitboxPosition = new Vector2(
-                    MathF.Round(targetPosition.X / tileSize) * tileSize,
-                    MathF.Round(targetPosition.Y / tileSize) * tileSize
+                    MathF.Round((mousePosition.X - tileSize / 2) / tileSize) * tileSize,
+                    MathF.Round((mousePosition.Y - tileSize / 2) / tileSize) * tileSize
                 );
             });
     }
@@ -83,6 +65,10 @@ public class PlayerControllerSystem : Engine.System
                     return;
 
                 Vector2 worldHitboxPosition = camera.ScreenToWorld(_hitboxPosition);
+                Vector2 playerPosition = entity.Transform.Position;
+
+                if (!InPlayerRange(playerPosition, worldHitboxPosition))
+                    return;
         
                 Engine.Engine.Instance.SpriteBatch.DrawRectangle(
                     worldHitboxPosition.X, 
@@ -164,5 +150,14 @@ public class PlayerControllerSystem : Engine.System
     private bool InAction(PlayerComponent player)
     {
         return player.State == PlayerState.Action;
+    }
+
+    private bool InPlayerRange(Vector2 playerPosition, Vector2 currentPosition)
+    {
+        float tileSize = Constants.TileSizeS;
+        return !(currentPosition.X > playerPosition.X + tileSize || 
+               currentPosition.X < playerPosition.X - tileSize * 2 || 
+               currentPosition.Y > playerPosition.Y + tileSize ||
+               currentPosition.Y < playerPosition.Y - tileSize * 2);
     }
 }
