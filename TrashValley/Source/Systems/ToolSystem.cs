@@ -25,7 +25,7 @@ public class ToolSystem : Engine.System
         
         SyncWithPlayer();
     }
-
+    
     private void SyncWithPlayer()
     {
         EntityQuery()
@@ -37,8 +37,8 @@ public class ToolSystem : Engine.System
 
                 if (playerComponent.State != PlayerState.Action)
                 {
-                    entity.Destroy();
                     playerComponent.CurrentTool = null;
+                    entity.Destroy();
                     return;
                 }
 

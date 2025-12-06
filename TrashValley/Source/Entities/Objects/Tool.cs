@@ -5,9 +5,9 @@ using Entity = Engine.Entity;
 
 namespace TrashValley;
 
-public class ToolEntity : Entity
+public class Tool : Entity
 {
-    public ToolEntity(World world, Arch.Core.Entity id, ToolModel model) : base(world, id)
+    public Tool(World world, Arch.Core.Entity id, ToolModel model) : base(world, id)
     {   
         AddComponent<ToolComponent>();
 

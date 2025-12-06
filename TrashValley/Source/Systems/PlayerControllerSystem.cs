@@ -90,7 +90,7 @@ public class PlayerControllerSystem : Engine.System
                     if (player.CurrentTool == null)
                     {
                         player.CurrentTool = ModelDatabase.Tools.AxeModel;
-                        SceneManager.ActiveScene?.AddEntity<ToolEntity>(player.CurrentTool);
+                        SceneManager.ActiveScene?.AddEntity<Tool>(player.CurrentTool);
                     }
                     
                     return;
@@ -111,6 +111,8 @@ public class PlayerControllerSystem : Engine.System
                 player.State = IsMoving(movement) ? PlayerState.Move : PlayerState.Idle;
                 
                 UpdateFacingDirection(entity, ref player, movement);
+
+                player.CurrentTool = null;
             });
     }
 
@@ -122,7 +124,7 @@ public class PlayerControllerSystem : Engine.System
         if (_currentActionTime <= 0f)
             player.State = PlayerState.Idle;
     }
-
+    
     private void UpdateFacingDirection(Entity playerEntity, ref PlayerComponent player, MovementComponent movement)
     {
         if (movement.Velocity.Length() == 0)

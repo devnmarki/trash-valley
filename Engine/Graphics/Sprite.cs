@@ -13,4 +13,9 @@ public struct Sprite
     {
         
     }
+
+    public Sprite(Texture2D texture)
+    {
+        Texture = texture;
+    }
 }

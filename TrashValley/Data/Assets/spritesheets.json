@@ -16,5 +16,14 @@
     "sprite_width": 16,
     "sprite_height": 16,
     "flip": false
+  },
+  {
+    "id": "soil",
+    "texture_id": "soil_sheet",
+    "columns": 2,
+    "rows": 1,
+    "sprite_width": 16,
+    "sprite_height": 16,
+    "flip": false
   }
 ]

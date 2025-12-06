@@ -12,6 +12,7 @@ public class DefaultScene : Scene
         Console.WriteLine("Entered default scene!");
         
         AddEntity<PlayerEntity>();
+        AddEntity<Resource>(ModelDatabase.Resources.RockModel);
         
         AddSystem(new MovementSystem());
         AddSystem(new PlayerControllerSystem());
