@@ -1,6 +1,5 @@
 ﻿using System;
 using Engine;
-using Microsoft.Xna.Framework;
 
 namespace TrashValley;
 
@@ -13,9 +12,11 @@ public class DefaultScene : Scene
         Console.WriteLine("Entered default scene!");
         
         AddEntity<PlayerEntity>();
+        AddEntity<Tool>(ModelDatabase.Tools.AxeModel);
         
         AddSystem(new MovementSystem());
         AddSystem(new PlayerControllerSystem());
+        AddSystem(new ToolSystem());
     }
 
     public override void OnUpdate()

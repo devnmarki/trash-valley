@@ -7,5 +7,14 @@
     "sprite_width": 32,
     "sprite_height": 32,
     "flip": false
+  },
+  {
+    "id": "axe_tool",
+    "texture_id": "axe_sheet",
+    "columns": 4,
+    "rows": 1,
+    "sprite_width": 16,
+    "sprite_height": 16,
+    "flip": false
   }
 ]

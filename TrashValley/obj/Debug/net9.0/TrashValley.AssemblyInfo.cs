@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrashValley")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0b2fb751711ebb217b7d230a7339b700ec6f217")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+079f5385dd568b498010f1c6705457cfdd72fcb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrashValley")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrashValley")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
