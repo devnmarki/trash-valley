@@ -6,6 +6,7 @@ public struct PlayerComponent
 {
     public Direction Direction;
     public PlayerState State = PlayerState.Idle;
+    public ToolModel? CurrentTool = null;
     
     public PlayerComponent() { }
 }

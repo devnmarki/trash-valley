@@ -86,6 +86,13 @@ public class PlayerControllerSystem : Engine.System
                 if (InAction(player))
                 {
                     HandleActionState(ref player, ref movement);
+
+                    if (player.CurrentTool == null)
+                    {
+                        player.CurrentTool = ModelDatabase.Tools.AxeModel;
+                        SceneManager.ActiveScene?.AddEntity<ToolEntity>(player.CurrentTool);
+                    }
+                    
                     return;
                 }
                 

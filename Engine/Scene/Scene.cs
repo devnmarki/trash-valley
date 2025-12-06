@@ -35,8 +35,13 @@ public abstract class Scene
     public Entity AddEntity<T>(params object[] args) where T : Entity
     {
         var entityId = EntityWorld.Create();
-        Entity newEntity = (Entity)Activator.CreateInstance(typeof(T), [EntityWorld, entityId, ..args])!;
-        return newEntity;
+
+        object[] ctorArgs = new object[args.Length + 2];
+        ctorArgs[0] = EntityWorld;
+        ctorArgs[1] = entityId;
+        Array.Copy(args, 0, ctorArgs, 2, args.Length);
+
+        return (Entity)Activator.CreateInstance(typeof(T), ctorArgs)!;
     }
 
     public void DestroyEntity(Entity entity)

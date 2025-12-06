@@ -12,7 +12,6 @@ public class DefaultScene : Scene
         Console.WriteLine("Entered default scene!");
         
         AddEntity<PlayerEntity>();
-        AddEntity<Tool>(ModelDatabase.Tools.AxeModel);
         
         AddSystem(new MovementSystem());
         AddSystem(new PlayerControllerSystem());

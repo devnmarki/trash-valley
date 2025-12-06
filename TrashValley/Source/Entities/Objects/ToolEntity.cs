@@ -5,11 +5,13 @@ using Entity = Engine.Entity;
 
 namespace TrashValley;
 
-public class Tool : Entity
+public class ToolEntity : Entity
 {
-    public Tool(World world, Arch.Core.Entity id, ToolModel model) : base(world, id)
-    {
-        ToolComponent toolComponent = AddComponent<ToolComponent>();
+    public ToolEntity(World world, Arch.Core.Entity id, ToolModel model) : base(world, id)
+    {   
+        AddComponent<ToolComponent>();
+
+        ref ToolComponent toolComponent = ref GetComponent<ToolComponent>();
         toolComponent.Model = model;
         SpriteSheet spriteSheet = toolComponent.Model.SpriteSheet;
 
