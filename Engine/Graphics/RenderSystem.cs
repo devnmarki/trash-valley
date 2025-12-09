@@ -38,7 +38,7 @@ public class RenderSystem : System
                     origin,
                     t.Scale,
                     (bool)sr.Sprite?.Flip ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                    sr.Layer / 1000f
+                    CalculateLayerDepth(ref sr, ref t)
                 );
             });
         
@@ -65,8 +65,25 @@ public class RenderSystem : System
                     new Vector2((float)sr.Sprite?.SourceRectangle?.Width! / 2f, (float)sr.Sprite?.SourceRectangle?.Height! / 2f),
                     t.Scale,
                     (bool)sr.Sprite?.Flip ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                    sr.Layer / 1000f
+                    CalculateLayerDepth(ref sr, ref t)
                 );
             });
+    }
+
+    private float CalculateLayerDepth(ref SpriteRenderer sr, ref Transform t)
+    {
+        if (sr.YSort)
+        {
+            // Normalize Y position to 0-1 range based on your world size
+            // Assuming your world Y goes from 0 to ~1000 or so
+            float normalizedY = MathHelper.Clamp(t.Position.Y / 10000f, 0f, 1f);
+        
+            // Layer takes priority, then Y position for fine sorting
+            return MathHelper.Clamp(sr.Layer * 0.1f - normalizedY, 0f, 1f);
+        }
+        else
+        {
+            return MathHelper.Clamp(sr.Layer / 1000f, 0f, 1f);
+        }
     }
 }

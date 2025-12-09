@@ -17,7 +17,7 @@ public class Tool : Entity
 
         AddComponent(new SpriteRenderer()
         {
-            Sprite = spriteSheet.GetSprite(0)
+            Sprite = spriteSheet.GetSprite(0),
         });
     }
 }

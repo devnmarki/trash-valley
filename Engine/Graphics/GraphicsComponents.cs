@@ -7,6 +7,7 @@ public struct SpriteRenderer
     public Sprite? Sprite;
     public Color Color = Color.White;
     public float Layer = 0f;
+    public bool YSort = false;
 
     public SpriteRenderer()
     {

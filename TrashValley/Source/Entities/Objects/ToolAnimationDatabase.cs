@@ -24,7 +24,7 @@ public static class ToolAnimationDatabase
                     {
                         SpriteIndex = 0,
                         Offset = new Vector2(2, 12),
-                        RenderingLayer = Constants.Layers.Player - 1
+                        RenderingLayer = -1
                     }
                 },
                 {
@@ -33,7 +33,7 @@ public static class ToolAnimationDatabase
                     {
                         SpriteIndex = 1,
                         Offset = new Vector2(-8, 4),
-                        RenderingLayer = Constants.Layers.Player + 1
+                        RenderingLayer = 1
                     }
                 },
                 {
@@ -42,7 +42,7 @@ public static class ToolAnimationDatabase
                     {
                         SpriteIndex = 2,
                         Offset = new Vector2(1, -8),
-                        RenderingLayer = Constants.Layers.Player + 1
+                        RenderingLayer = 1
                     }
                 },
                 {
@@ -51,7 +51,7 @@ public static class ToolAnimationDatabase
                     {
                         SpriteIndex = 3,
                         Offset = new Vector2(8, 4),
-                        RenderingLayer = Constants.Layers.Player + 1
+                        RenderingLayer = 1
                     }
                 },
             }

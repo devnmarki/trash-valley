@@ -24,7 +24,8 @@ public class PlayerEntity : Entity
         AddComponent(new SpriteRenderer()
         {
             Sprite = AssetManager.GetSpriteSheet("player")!.GetSprite(0),
-            Layer = Constants.Layers.Player
+            Layer = Constants.Layers.Player,
+            YSort = true
         });
         AddComponent(new SpriteAnimator());
         AddComponent(new BoxCollider()

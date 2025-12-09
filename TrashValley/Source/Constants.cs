@@ -8,6 +8,6 @@ public static class Constants
 
     public static class Layers
     {
-        public const float Player = 500f;
+        public const float Player = 2f;
     }
 }

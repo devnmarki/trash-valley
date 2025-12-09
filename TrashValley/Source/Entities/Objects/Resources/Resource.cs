@@ -1,4 +1,5 @@
-﻿using Arch.Core;
+﻿using System.Transactions;
+using Arch.Core;
 using Engine;
 using Entity = Engine.Entity;
 
@@ -13,6 +14,11 @@ public class Resource : Entity
         if (!HasComponent<ResourceComponent>())
             AddComponent(new ResourceComponent() { Model = model } );
 
-        AddComponent(new SpriteRenderer() { Sprite = model.Sprite });
+        AddComponent(new SpriteRenderer()
+        {
+            Sprite = model.Sprite,
+            Layer = Constants.Layers.Player,
+            YSort = true
+        });
     }
 }
